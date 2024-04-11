@@ -1,0 +1,6 @@
+[submodule "lv_drivers"]
+	path = lv_drivers
+	url = ssh://git@bitbucket.sw.nxp.com/~nxf81389/lv_drivers.git
+[submodule "lvgl"]
+	path = lvgl
+	url = ssh://git@bitbucket.sw.nxp.com/~nxf81389/lvgl.git
