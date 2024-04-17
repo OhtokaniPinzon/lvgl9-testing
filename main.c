@@ -68,7 +68,7 @@ int main(int argc, char ** argv)
     lv_color32_t * buf2 = NULL;
 
     /* Initialize draw buffer */
-    buf1 = lv_malloc(H_RES * V_RES * sizeof(lv_color32_t));
+    buf1 = lv_malloc(H_RES * V_RES * sizeof(lv_color32_t)*4);
     if (!buf1)
     {
         printf("********************** failed to allocate draw buffer 1\r\n");
@@ -76,7 +76,7 @@ int main(int argc, char ** argv)
         return NULL;
     }
 
-    buf2 = lv_malloc(H_RES * V_RES * sizeof(lv_color32_t));
+    buf2 = lv_malloc(H_RES * V_RES * sizeof(lv_color32_t)*4);
     if (!buf2)
     {
         printf("********************** failed to allocate draw buffer 2\r\n");
