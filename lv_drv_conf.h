@@ -179,7 +179,7 @@
  *  Wayland drivers (monitor, mouse, keyboard, touchscreen)
  *---------------------------------------*/
 #ifndef USE_WAYLAND
-#  define USE_WAYLAND       0
+#  define USE_WAYLAND       1
 #endif
 
 #if USE_WAYLAND
