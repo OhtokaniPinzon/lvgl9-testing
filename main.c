@@ -16,8 +16,8 @@
 #include <stdlib.h>
 #include <signal.h>
 
-#define V_RES 1280
-#define H_RES 720
+#define H_RES 1280
+#define V_RES 800
 
 //#define DISP_BUF_SIZE (128 * 1024)
 
