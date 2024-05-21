@@ -5,10 +5,8 @@
 
 #include "lvgl/lvgl.h"
 #include "lvgl/demos/lv_demos.h"
-#include "lv_drivers/wayland/wayland.h"  
-//#include "lv_drivers/display/fbdev.h"  
-//#include "lvgl/src/drivers/display/fb/lv_linux_fbdev.h"  
-#include "lv_drivers/indev/evdev.h"
+#include "lvgl/src/drivers/wayland/wayland.h"  
+#include "lvgl/src/indev/lv_indev.h"
 #include <unistd.h>
 #include <pthread.h>
 #include <time.h>
@@ -18,8 +16,6 @@
 
 #define H_RES 1280
 #define V_RES 800
-
-//#define DISP_BUF_SIZE (128 * 1024)
 
 
 static lv_display_t* hal_init(void)
@@ -38,7 +34,7 @@ bool close_cb(lv_disp_t * disp)
     printf("\nInside close callback function!!\n");
     printf("Program exit...\n");
     lv_deinit();
-//    lv_wayland_deinit();
+    lv_wayland_deinit();
 
     exit(0);
 }
@@ -50,7 +46,6 @@ int main(int argc, char ** argv)
 
     lv_disp_t * disp;
 
-//bdev_init();
     /*LittlevGL init*/
     lv_init();
 	printf("lv_init\r\n");
@@ -81,7 +76,6 @@ int main(int argc, char ** argv)
         return NULL;
     }
 
-//	lv_display_set_flush_cb(disp, flush_cb);
 	lv_display_set_buffers(disp, buf1, buf2, H_RES * V_RES * sizeof(lv_color32_t)*8, LV_DISPLAY_RENDER_MODE_DIRECT);
     printf("Disp = %d \n", (int)disp);
 
